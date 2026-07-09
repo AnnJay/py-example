@@ -43,8 +43,6 @@ async def create_post(post: schemas.PostCreate, db: Annotated[Session, Depends(g
     #                (post.title, post.content, post.published))
     # new_post = cursor.fetchone()
     # connection.commit()
-
-    print(curr_user)
     new_post = models.Post(owner_id=curr_user.id, **post.model_dump())
     # new_post = models.Post(
     #     title=post.title, content=post.content, published=post.published)
