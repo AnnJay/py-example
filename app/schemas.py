@@ -40,6 +40,12 @@ class PostResponse(PostBase):
     model_config = {"from_attributes": True}
 
 
+class PostWithVotes(PostResponse):
+    votes_number: int = 0
+    
+    model_config = {"from_attributes": True}
+
+
 class Token(BaseModel):
     access_token: str
     token_type: str

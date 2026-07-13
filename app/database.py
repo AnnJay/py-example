@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from .config import settings
 
 DATABASE_URL = (
-    f"postgresql+psycopg://"
+    "postgresql+psycopg://"
     f"{settings.database_username}:{settings.database_password}"
     f"@{settings.database_hostname}/{settings.database_name}"
 )
