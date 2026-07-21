@@ -1,0 +1,14 @@
+[Unit]
+Description=demo backend application
+After=network.target
+
+[Service]
+User=ann
+Group=ann
+WorkingDirectory=/home/ann/app/src/
+Environment="PATH=/home/ann/app/venv/bin"
+EnvironmentFile=/home/ann/.env
+ExecStart=/home/ann/app/venv/bin/gunicorn -w 1 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
