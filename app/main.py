@@ -6,7 +6,8 @@ from .database import engine
 from .router import post, user, auth, vote
 
 
-models.Base.metadata.create_all(bind=engine)
+# это можно закомментировать, потому что мы будем делать все с алембиком
+# models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 origins = ['*']
